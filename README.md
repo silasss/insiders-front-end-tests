@@ -1,5 +1,7 @@
 # Insiders - Testes no Front-end
 
+###### Depois de executar `npm update`
+
 ## Executar apenas os testes
 Para executar os testes deste projeto n&atilde;o &eacute; preciso rodar o servidor
 
