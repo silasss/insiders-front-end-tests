@@ -1,0 +1,20 @@
+{
+  "knowledges": [
+    {
+      "id": 1,
+      "known": "ReacJS"
+    },
+    {
+      "id": 2,
+      "known": "Jest"
+    },
+    {
+      "id": 3,
+      "known": "Redux"
+    },
+    {
+      "id": 4,
+      "known": "NodeJS"
+    }
+  ]
+}
