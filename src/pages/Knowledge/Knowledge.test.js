@@ -10,8 +10,8 @@ beforeEach(() => {
 
 afterEach(cleanup)
 
-describe('Page Knowledge', () => {
-  it('Should do the first request, render without errors and with empty list', async () => {
+describe('Página Knowledge', () => {
+  it('Deve fazer o primeiro request, rendizar sem erros e com lista vazia', async () => {
     
     await waitFor(() => {
       render(<Knowledge />)
@@ -24,7 +24,7 @@ describe('Page Knowledge', () => {
     expect(screen.getByTestId('list')).toBeEmptyDOMElement()
   })
 
-  it('Should show item loaded from api', async () => {
+  it('Deve preencher a lista com o response da API', async () => {
     jest.resetAllMocks()
 
     axios.get.mockResolvedValueOnce({ 
@@ -43,7 +43,7 @@ describe('Page Knowledge', () => {
     expect(screen.getByText('Mocked')).toBeInTheDocument()
   })
 
-  it('Should show error if axios broken up', async () => {
+  it('Deve exibir erro quando o axios responder com erro', async () => {
     jest.resetAllMocks()
 
     axios.get.mockRejectedValue()
@@ -57,7 +57,7 @@ describe('Page Knowledge', () => {
     expect(screen.queryByTestId(/error/i)).toBeInTheDocument()
   })
 
-  it('should add a knowledge to list', async () => {
+  it('Deve permitir adicionar um conhecimento novo na lista', async () => {
     await waitFor(() => {
       render(<Knowledge />)
     })
@@ -72,7 +72,7 @@ describe('Page Knowledge', () => {
     expect(input).toHaveValue('')
   })
 
-  it('should fill out the input before click submit button', async () => {
+  it('Deve validar se preencheu o input antes de clicar no botão submit', async () => {
     await waitFor(() => {
       render(<Knowledge />)
     })
@@ -84,7 +84,7 @@ describe('Page Knowledge', () => {
     expect(screen.getByText(/Preencha o conhecimento/)).toBeInTheDocument()
   })
 
-  it('show error when trying to add duplicated item in list', async () => {
+  it('Deve validar a tentativa de inclusão de conhecimento duplicado', async () => {
     await waitFor(() => {
       render(<Knowledge />)
     })

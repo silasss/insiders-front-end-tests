@@ -1,8 +1,8 @@
 import { fireEvent, render, screen } from '@testing-library/react'
 import InputText from './InputText'
 
-describe('InputText component', () => {
-  test('render input', () => {
+describe('InputText Component', () => {
+  test('Renderização', () => {
     const { getByTestId } = render(<InputText data-testid="input" value="" onChange={jest.fn()} />)
     
     const element = getByTestId('input')
@@ -10,7 +10,7 @@ describe('InputText component', () => {
     expect(element).toBeInTheDocument()
   })
 
-  test('call onchange function', async () => {
+  test('Chamar callback no evento de onChange', async () => {
     const mockFunction = jest.fn()
     
     const { debug } = render(<InputText data-testid="input" value="" onChange={mockFunction}/>)

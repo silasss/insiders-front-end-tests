@@ -2,51 +2,51 @@ import { alreadyExistsIn, alreadyExistsInWithBlackListAsync } from "./array"
 
 describe('Array utils', () => {
 
-  describe('alreadyExistsIn', () => {
+  describe('Função alreadyExistsIn', () => {
     
-    it('should have been called with two parameters', () => {
-      expect(alreadyExistsIn).toThrowError(/must have two parameters/)
+    it('Deve ser chamado com dois parâmetros', () => {
+      expect(alreadyExistsIn).toThrowError(/Deve ter dois parâmetros/)
     })
     
-    it('should receive an array as a second parameter', () => {
-      expect(() => alreadyExistsIn('', '')).toThrowError(/second parameter must be an Array/)
+    it('Deve receber um array no segundo parâmetro', () => {
+      expect(() => alreadyExistsIn('', '')).toThrowError(/segundo parâmetro precisa ser um Array/)
     })
     
-    it('shouldn\'t find a item in array', () => {
+    it('Deve retornar falso quando não existir no array', () => {
       expect(alreadyExistsIn('Test', ['ReactJS', 'NodeJS'])).toBe(false)
     })
     
-    it('should find a item in array', () => {
+    it('Deve retornar true quando existir no array', () => {
       expect(alreadyExistsIn('ReactJS', ['ReactJS', 'NodeJS'])).toBe(true)
     })
   })
 
-  describe('alreadyExistsInWithBlackListAsync', () => {
+  describe('Função Promise alreadyExistsInWithBlackListAsync', () => {
     
-    it('should have been called with two parameters', async () => {
+    it('Deve ser chamado com dois parâmetros', async () => {
       await expect(alreadyExistsInWithBlackListAsync)
         .rejects
-        .toThrowError(/must have two parameters/)
+        .toThrowError(/Deve ter dois parâmetros/)
     })
     
-    it('should receive an array as a second parameter', async () => {
+    it('Deve receber um array no segundo parâmetro', async () => {
       await expect(() => alreadyExistsInWithBlackListAsync('', ''))
         .rejects
-        .toThrowError(/second parameter must be an Array/)
+        .toThrowError(/segundo parâmetro precisa ser um Array/)
     })
     
-    it('should find a item in array', async () => {
+    it('Deve retornar true quando existir no array', async () => {
       await expect(alreadyExistsInWithBlackListAsync('ReactJS', ['ReactJS', 'NodeJS']))
         .resolves
         .toBe(true)
     })
     
-    it('should find a item in array', async () => {
+    it('Deve retornar true quando existir no array - 2', async () => {
       const result = await alreadyExistsInWithBlackListAsync('ReactJS', ['ReactJS', 'NodeJS'])
       expect(result).toBe(true)
     })
     
-    it('shouldn\'t find a item in array', done => {
+    it('Deve retornar falso quando não existir no array', done => {
       alreadyExistsInWithBlackListAsync('Test', ['ReactJS', 'NodeJS'])
         .then(result => {
           expect(result).toBe(false)

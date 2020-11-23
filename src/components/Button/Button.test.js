@@ -1,8 +1,8 @@
 import { fireEvent, render } from '@testing-library/react'
 import Button from './Button'
 
-describe('Button component', () => {
-  test('render button', () => {
+describe('Button Component', () => {
+  test('Renderização', () => {
     const { getByText, debug } = render(<Button>Adicionar</Button>)
     
     const element = getByText('Adicionar')
@@ -10,7 +10,7 @@ describe('Button component', () => {
     expect(element).toBeInTheDocument()
   })
 
-  test('call callback function', () => {
+  test('Chamada do Callback no evento de click', () => {
     const mockFunction = jest.fn()
 
     const { getByText } = render(<Button onClick={mockFunction}>Adicionar</Button>)
