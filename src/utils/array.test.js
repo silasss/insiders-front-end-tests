@@ -41,7 +41,7 @@ describe('Array utils', () => {
         .toBe(true)
     })
     
-    it('should find a item in array - async', async () => {
+    it('should find a item in array', async () => {
       const result = await alreadyExistsInWithBlackListAsync('ReactJS', ['ReactJS', 'NodeJS'])
       expect(result).toBe(true)
     })

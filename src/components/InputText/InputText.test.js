@@ -13,7 +13,7 @@ describe('InputText component', () => {
   test('call onchange function', async () => {
     const mockFunction = jest.fn()
     
-    render(<InputText data-testid="input" value="" onChange={mockFunction}/>)
+    const { debug } = render(<InputText data-testid="input" value="" onChange={mockFunction}/>)
     
     fireEvent.change(screen.getByTestId('input'), { target: { value: 'ReactJS' }})
     

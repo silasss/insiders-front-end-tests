@@ -3,10 +3,10 @@ import Button from './Button';
 
 describe('Button component', () => {
   test('render button', () => {
-    const { getByText } = render(<Button>Adicionar</Button>)
+    const { getByText, debug } = render(<Button>Adicionar</Button>)
     
     const element = getByText('Adicionar')
-    
+
     expect(element).toBeInTheDocument()
   })
 
