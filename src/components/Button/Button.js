@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+import PropTypes from "prop-types"
 
 const Button = (props) => <button {...props}>{props.children}</button>
 

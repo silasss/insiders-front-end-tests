@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react'
-import InputText from './InputText';
+import InputText from './InputText'
 
 describe('InputText component', () => {
   test('render input', () => {

@@ -1,3 +1,3 @@
-import Knowledge from "./Knowledge";
+import Knowledge from "./Knowledge"
 
 export default Knowledge

@@ -40,11 +40,11 @@ const Knowledge = () => {
   }
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault()
     setError("")
 
     try {
-      validateSubmit();
+      validateSubmit()
 
       setKnowledgeList((prev) => ([
         ...prev,
