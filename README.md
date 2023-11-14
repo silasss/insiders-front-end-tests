@@ -1,5 +1,7 @@
 # Insiders - Testes no Front-end
 
+> This project is supose to be used as a support for Interns of Invillia company.
+
 ###### Depois de executar `npm update`
 
 ## Executar apenas os testes
